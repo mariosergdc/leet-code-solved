@@ -17,21 +17,12 @@ const BinaryTreePaths = () => {
   const dfs = (node, parents) => {
     if (node === null) return;
     if (node.left === null && node.right === null) {
-      let newParents = new String(parents);
-      let str = `->${node.val}`;
-      let newP = newParents.concat(str);
-
+      let newP = parents.concat(`->${node.val}`);
       res.push(newP);
     }
-    let newParents = new String(parents);
-    let newParents2 = new String(parents);
-    let str = `->${node.val}`;
-
-    let newP = newParents.concat(str);
-    let newP2 = newParents2.concat(str);
-    console.log(newP);
+    let newP = parents.concat(`->${node.val}`);
     dfs(node.left, newP);
-    dfs(node.right, newP2);
+    dfs(node.right, newP);
   };
 
   var binaryTreePaths = function (root) {
