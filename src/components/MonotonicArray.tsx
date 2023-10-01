@@ -9,7 +9,7 @@ const MonotonicArray = () => {
     let asc = true,
       des = true;
     for (let i = 0; i < nums.length; i++) {
-      j = i + 1;
+      let j = i + 1;
       if (asc && nums[i] > nums[j]) {
         if (!des) return false;
         asc = false;
